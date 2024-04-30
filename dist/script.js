@@ -17,9 +17,10 @@ fetch(url, {
   })
   .then(data => {
     console.log(data.hits);
+
     data.hits.forEach(property => {
       const propertyListing = document.createElement('div');
-      propertyListing.classList.add('property');
+      propertyListing.classList.add('property-listings__listing');
 
       const address = property.location
         .map(level => level.name)
@@ -27,10 +28,17 @@ fetch(url, {
         .join(', ');
 
       propertyListing.innerHTML = `
-        <h2>${property.title}</h2>
-        <img src="${property.coverPhoto.url}" alt="${property.title}">
-        <p>${property.price}</p>
+      <a href="property-details.html">
+        <h3>${property.title}</h3>
+        <div class="img--container">
+          <img src="${property.coverPhoto.url}" alt="${property.title}">
+        </div>
+        <p class="property-listings__listing__price">$${property.price}</p>
         <p>${address}</p>
+        <p class="property-listings__listing__area">${property.area.toFixed(
+          2
+        )} SQM</p>
+      </a>
       `;
       propertyListings.appendChild(propertyListing);
     });

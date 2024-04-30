@@ -1,0 +1,57 @@
+.property-listings {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+  a {
+    font-size: $font-med;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__listing {
+    background: $colorSecondary;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 400ms ease-in-out;
+
+    &:hover {
+      background: rgb(236, 177, 236);
+      transform: scale(1.05);
+
+      img {
+        transform: scale(1.2);
+      }
+    }
+
+    p {
+      padding: 0 1rem;
+    }
+
+    h3 {
+      padding: 2rem 1rem 0;
+    }
+
+    &__price {
+      margin-top: 1rem;
+      font-size: $font-lg;
+      font-weight: 600;
+    }
+
+    &__area {
+      font-weight: 700;
+      font-size: $font-sm;
+    }
+
+    .img--container {
+      overflow: hidden;
+      height: 300px;
+
+      img {
+        height: 100%;
+        transition: all 300ms ease-in-out;
+      }
+    }
+  }
+}

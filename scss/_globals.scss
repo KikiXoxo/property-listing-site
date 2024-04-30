@@ -1,5 +1,6 @@
 // VARIABLES
 $colorPrimary: rgb(182, 33, 182);
+$colorSecondary: rgb(255, 220, 255);
 $colorDark: #333;
 $colorLight: #f4f4f4;
 $bgLight: rgb(255, 255, 244);
@@ -7,11 +8,17 @@ $bgLight: rgb(255, 255, 244);
 $font-sm: 0.875rem;
 $font-med: 1rem;
 $font-lg: 1.4rem;
-$font-xlg: 2.5rem;
+$font-xlg: 2rem;
+$font-xxlg: 2.5rem;
 
 // MIXINS & SASS MAP
 
 // GENERAL STYLING RESETS
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -39,11 +46,11 @@ h4 {
 
 h1 {
   font-weight: 700;
-  font-size: $font-xlg;
+  font-size: $font-xxlg;
 }
 
 h3 {
-  // font-size: $font-lg;
+  font-size: $font-xlg;
   font-family: 'Teko', sans-serif;
   text-transform: uppercase;
 }
@@ -71,6 +78,7 @@ a {
   color: $colorDark;
   font-size: $font-sm;
   font-weight: 500;
+  cursor: pointer;
 }
 
 a:hover {
@@ -93,7 +101,7 @@ li {
   margin: 0 auto;
 
   &--pall {
-    padding: 4rem 1.5rem 1.2rem;
+    padding: 4rem 1.5rem;
   }
 
   &--py {
