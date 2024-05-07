@@ -1,5 +1,5 @@
 // VARIABLES
-$colorPrimary: rgb(160, 35, 160);
+$colorPrimary: rgb(139, 33, 139);
 $colorSecondary: rgb(255, 220, 255);
 $colorDark: #333;
 $colorLight: #f4f4f4;
@@ -157,6 +157,11 @@ li {
 
 .bg-primary {
   background: $colorPrimary;
+  color: $colorLight;
+
+  a {
+    color: $colorLight;
+  }
 }
 
 .bg-secondary {
