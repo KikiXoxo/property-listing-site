@@ -132,8 +132,12 @@ li {
   background: rgb(255, 255, 244);
 }
 
-.bg-main {
+.bg-primary {
   background: rgb(160, 35, 160);
+}
+
+.bg-secondary {
+  background: rgb(255, 220, 255);
 }
 
 .header {
@@ -323,4 +327,40 @@ li {
   height: 100%;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
+}
+
+#achievements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+#achievements .achievements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 4rem;
+}
+#achievements .achievements p {
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+#achievements .achievements i {
+  color: rgb(160, 35, 160);
+  margin: 1rem 0;
 }

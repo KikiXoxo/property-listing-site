@@ -118,3 +118,28 @@
     }
   }
 }
+
+#achievements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .achievements {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 4rem;
+
+    p {
+      font-weight: 600;
+      font-size: 1.6rem;
+    }
+
+    i {
+      color: $colorPrimary;
+      margin: 1rem 0;
+    }
+  }
+}
