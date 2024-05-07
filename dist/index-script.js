@@ -43,8 +43,12 @@ const activatePropertyListings = function () {
       console.log(data.hits);
 
       data.hits.forEach(property => {
-        const propertyListing = document.createElement('div');
+        const propertyListing = document.createElement(`div`);
         propertyListing.classList.add('property-listings__listing');
+
+        // propertyListing.dataset.externalid = property.externalID;
+        // // console.log(propertyListing.dataset.externalID);
+        // console.log(propertyListing);
 
         const address = property.location
           .map(level => level.name)
@@ -52,7 +56,7 @@ const activatePropertyListings = function () {
           .join(', ');
 
         propertyListing.innerHTML = `
-      <a href="property-details.html">
+      <a href="property-details.html?externalID=${property.externalID}">
         <h3>${property.title}</h3>
         <div class="img--container">
           <img src="${property.coverPhoto.url}" alt="${property.title}">
