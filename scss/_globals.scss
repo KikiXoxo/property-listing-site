@@ -1,9 +1,10 @@
 // VARIABLES
-$colorPrimary: rgb(167, 33, 167);
+$colorPrimary: rgb(160, 35, 160);
 $colorSecondary: rgb(255, 220, 255);
 $colorDark: #333;
 $colorLight: #f4f4f4;
 $bgLight: rgb(255, 255, 244);
+// $bgMain: rgb(255, 255, 244);
 
 $font-sm: 0.875rem;
 $font-med: 1rem;
@@ -44,15 +45,21 @@ h4 {
   margin-bottom: 1.2rem;
 }
 
+h5,
+h6 {
+  margin: 1.2rem 0;
+}
+
 h1 {
   font-weight: 700;
   font-size: $font-xxlg;
 }
 
 h3 {
-  font-size: $font-xlg;
-  font-family: 'Teko', sans-serif;
+  // font-size: $font-lg;
+  // font-family: 'Teko', sans-serif;
   text-transform: uppercase;
+  font-weight: 750;
 }
 
 h4 {
@@ -64,6 +71,13 @@ h4 {
 h5 {
   font-weight: 700;
   font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-weight: 800;
+  font-size: $font-med;
+  text-transform: uppercase;
 }
 
 p {
@@ -106,7 +120,7 @@ li {
   margin: 0 auto;
 
   &--pall {
-    padding: 5rem 1.5rem;
+    padding: 4rem 1.5rem;
   }
 
   &--py {
@@ -122,13 +136,14 @@ li {
   color: $colorLight;
   background: $colorPrimary;
   border: none;
-  border-radius: 8px;
+  border-radius: 25px;
   padding: 0.8rem 2.4rem;
   transition: all 300ms ease-in-out;
   text-align: center;
 
   &:hover {
     opacity: 0.8;
+    transition: all 300ms ease-in-out;
   }
 }
 
@@ -138,4 +153,8 @@ li {
 
 .bg-light {
   background: $bgLight;
+}
+
+.bg-main {
+  background: $colorPrimary;
 }

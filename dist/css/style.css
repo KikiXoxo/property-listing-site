@@ -29,15 +29,19 @@ h4 {
   margin-bottom: 1.2rem;
 }
 
+h5,
+h6 {
+  margin: 1.2rem 0;
+}
+
 h1 {
   font-weight: 700;
   font-size: 2.5rem;
 }
 
 h3 {
-  font-size: 2rem;
-  font-family: "Teko", sans-serif;
   text-transform: uppercase;
+  font-weight: 750;
 }
 
 h4 {
@@ -48,6 +52,13 @@ h4 {
 h5 {
   font-weight: 700;
   font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 
 p {
@@ -88,7 +99,7 @@ li {
   margin: 0 auto;
 }
 .container--pall {
-  padding: 5rem 1.5rem;
+  padding: 4rem 1.5rem;
 }
 .container--py {
   padding: 5rem 0;
@@ -99,9 +110,9 @@ li {
 
 .btn {
   color: #f4f4f4;
-  background: rgb(167, 33, 167);
+  background: rgb(160, 35, 160);
   border: none;
-  border-radius: 8px;
+  border-radius: 25px;
   padding: 0.8rem 2.4rem;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
@@ -109,14 +120,20 @@ li {
 }
 .btn:hover {
   opacity: 0.8;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 
 .text--primary {
-  color: rgb(167, 33, 167);
+  color: rgb(160, 35, 160);
 }
 
 .bg-light {
   background: rgb(255, 255, 244);
+}
+
+.bg-main {
+  background: rgb(160, 35, 160);
 }
 
 .header {
@@ -137,7 +154,7 @@ li {
 }
 .header .nav__logo {
   font-size: 1.8rem;
-  color: rgb(167, 33, 167);
+  color: rgb(160, 35, 160);
   font-family: "Righteous", sans-serif;
 }
 .header .nav__links {
@@ -158,9 +175,9 @@ li {
   transition: all 150ms ease-in-out;
 }
 .header .nav__link:hover {
-  color: rgb(167, 33, 167);
+  color: rgb(160, 35, 160);
   opacity: 1;
-  border-bottom: 3px solid rgb(167, 33, 167);
+  border-bottom: 3px solid rgb(160, 35, 160);
 }
 .header__content {
   width: 75%;
@@ -169,6 +186,9 @@ li {
   margin-bottom: 4rem;
 }
 
+.categories {
+  border-bottom: 1px solid rgb(255, 220, 255);
+}
 .categories .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -222,18 +242,15 @@ li {
   border-radius: 10px 30px;
 }
 .categories__category a {
-  color: rgb(167, 33, 167);
+  color: rgb(160, 35, 160);
 }
 .categories__category p {
   font-size: 0.875rem;
 }
-.categories__category h5 {
-  margin: 1.2rem 0;
-}
 .categories .active {
   -webkit-transform: scale(1.08);
           transform: scale(1.08);
-  background-color: rgb(167, 33, 167);
+  background-color: rgb(160, 35, 160);
   color: #f4f4f4;
 }
 .categories .active a {
@@ -241,53 +258,68 @@ li {
   border-bottom: 1px solid;
 }
 
-.property-listings {
+#property-listings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#property-listings .property-listings {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  margin-top: 3rem;
 }
-.property-listings a {
+#property-listings .property-listings a {
   font-size: 1rem;
 }
-.property-listings a:hover {
+#property-listings .property-listings a:hover {
   opacity: 1;
 }
-.property-listings__listing {
+#property-listings .property-listings__listing {
   background: rgb(255, 220, 255);
   font-weight: 500;
   border-radius: 8px;
   -webkit-transition: all 400ms ease-in-out;
   transition: all 400ms ease-in-out;
 }
-.property-listings__listing:hover {
+#property-listings .property-listings__listing:hover {
   background: rgb(241, 187, 241);
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
-.property-listings__listing:hover img {
+#property-listings .property-listings__listing:hover img {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
-.property-listings__listing p {
+#property-listings .property-listings__listing p {
   padding: 0 1rem;
 }
-.property-listings__listing h3 {
-  padding: 2rem 1rem 0;
+#property-listings .property-listings__listing h3 {
+  padding: 2.5rem 1rem 0;
 }
-.property-listings__listing__price {
+#property-listings .property-listings__listing__price {
   margin-top: 1rem;
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 700;
 }
-.property-listings__listing__area {
+#property-listings .property-listings__listing__area {
   font-weight: 700;
   font-size: 0.875rem;
 }
-.property-listings__listing .img--container {
+#property-listings .property-listings__listing .img--container {
   overflow: hidden;
   height: 300px;
 }
-.property-listings__listing .img--container img {
+#property-listings .property-listings__listing .img--container img {
   height: 100%;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;

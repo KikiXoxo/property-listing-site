@@ -57,9 +57,11 @@ const activatePropertyListings = function () {
         <div class="img--container">
           <img src="${property.coverPhoto.url}" alt="${property.title}">
         </div>
-        <p class="property-listings__listing__price">$${property.price}</p>
-        <p>${address}</p>
-        <p class="property-listings__listing__area">${property.area.toFixed(
+        <p class="property-listings__listing__price"><i class="fa-solid fa-money-check-dollar"></i> $${
+          property.price
+        }</p>
+        <p><i class="fa-solid fa-location-dot"></i> ${address}</p>
+        <p class="property-listings__listing__area"><i class="fa-solid fa-maximize"></i> ${property.area.toFixed(
           2
         )} SQM</p>
       </a>

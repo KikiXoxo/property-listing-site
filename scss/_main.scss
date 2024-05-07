@@ -1,4 +1,5 @@
 .categories {
+  border-bottom: 1px solid $colorSecondary;
   .container {
     display: flex;
     flex-direction: column;
@@ -37,10 +38,6 @@
     p {
       font-size: $font-sm;
     }
-
-    h5 {
-      margin: 1.2rem 0;
-    }
   }
 
   .active {
@@ -55,59 +52,68 @@
   }
 }
 
-.property-listings {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+#property-listings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // text-align: center;
 
-  a {
-    font-size: $font-med;
-    &:hover {
-      opacity: 1;
-    }
-  }
+  .property-listings {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
 
-  &__listing {
-    background: $colorSecondary;
-    font-weight: 500;
-    border-radius: 8px;
-    transition: all 400ms ease-in-out;
-
-    &:hover {
-      background: rgb(241, 187, 241);
-      transform: scale(1.05);
-
-      img {
-        transform: scale(1.2);
+    a {
+      font-size: $font-med;
+      &:hover {
+        opacity: 1;
       }
     }
 
-    p {
-      padding: 0 1rem;
-    }
+    &__listing {
+      background: $colorSecondary;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: all 400ms ease-in-out;
 
-    h3 {
-      padding: 2rem 1rem 0;
-    }
+      &:hover {
+        background: rgb(241, 187, 241);
+        transform: scale(1.05);
 
-    &__price {
-      margin-top: 1rem;
-      font-size: $font-lg;
-      font-weight: 600;
-    }
+        img {
+          transform: scale(1.2);
+        }
+      }
 
-    &__area {
-      font-weight: 700;
-      font-size: $font-sm;
-    }
+      p {
+        padding: 0 1rem;
+      }
 
-    .img--container {
-      overflow: hidden;
-      height: 300px;
+      h3 {
+        padding: 2.5rem 1rem 0;
+      }
 
-      img {
-        height: 100%;
-        transition: all 300ms ease-in-out;
+      &__price {
+        margin-top: 1rem;
+        // font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      &__area {
+        font-weight: 700;
+        font-size: $font-sm;
+      }
+
+      .img--container {
+        overflow: hidden;
+        height: 300px;
+
+        img {
+          height: 100%;
+          transition: all 300ms ease-in-out;
+        }
       }
     }
   }
