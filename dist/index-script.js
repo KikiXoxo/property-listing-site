@@ -46,10 +46,6 @@ const activatePropertyListings = function () {
         const propertyListing = document.createElement(`div`);
         propertyListing.classList.add('property-listings__listing');
 
-        // propertyListing.dataset.externalid = property.externalID;
-        // // console.log(propertyListing.dataset.externalID);
-        // console.log(propertyListing);
-
         const address = property.location
           .map(level => level.name)
           .reverse()
