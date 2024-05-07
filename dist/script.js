@@ -93,3 +93,43 @@ const activatePropertyListings = function () {
   // }
 };
 activatePropertyListings();
+
+// ACHIEVEMENTS SECTION COUNTER
+const activateAchievements = function () {
+  const achievements = document.querySelector('#achievements');
+  const counters = document.querySelectorAll('.counter');
+
+  let counted = 0;
+
+  const increaseCount = function (entries, observer) {
+    const [entry] = entries;
+    // console.log(entry);
+
+    if (!entry.isIntersecting) return; // Guard clause
+
+    const timer = setInterval(function () {
+      counted++;
+
+      counters.forEach(counter => {
+        if (counted > +counter.dataset.num) return;
+
+        const content = counter.classList.contains('counter--3')
+          ? `$${counted}K+`
+          : `${counted}+`;
+        counter.textContent = content;
+
+        if (counted > 800) clearInterval(timer);
+      });
+    }, 6);
+
+    observer.unobserve(achievements);
+  };
+
+  const counterObserver = new IntersectionObserver(increaseCount, {
+    root: null,
+    threshold: 0.95,
+  });
+
+  counterObserver.observe(achievements);
+};
+activateAchievements();
