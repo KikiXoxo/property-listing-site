@@ -121,17 +121,6 @@
         padding: 2.5rem 1rem 0;
       }
 
-      &__price {
-        margin-top: 1rem;
-        // font-size: 1.2rem;
-        font-weight: 700;
-      }
-
-      &__area {
-        font-weight: 700;
-        font-size: $font-sm;
-      }
-
       .img--container {
         overflow: hidden;
         height: 300px;
@@ -143,6 +132,24 @@
       }
     }
   }
+}
+
+.property-listings__listing__price {
+  margin-top: 1rem;
+  // font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.property-listings__listing__area {
+  font-weight: 700;
+  font-size: $font-sm;
+}
+
+.property-listings__listing__purpose {
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-top: 2rem;
 }
 
 #achievements {
