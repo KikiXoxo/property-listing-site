@@ -9,22 +9,40 @@
     grid-template-columns: 3fr 1fr 1fr 1fr;
     gap: 2rem 5rem;
 
+    @include breakpoint-down(mobile) {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 0;
+    }
+
     & > *:last-child {
       justify-self: center;
       grid-column: span 5;
+
+      @include breakpoint-down(mobile) {
+        grid-column: span 1;
+      }
     }
   }
 
   a p {
     border-left: 2px solid $colorSecondary;
     padding-left: 0.5rem;
+
+    @include breakpoint-down(mobile) {
+      border-left: none;
+    }
   }
 
-  .socials a {
-    margin-right: 0.75rem;
+  .socials {
+    margin: 1rem 0 3rem;
+    a {
+      margin-right: 0.75rem;
+    }
   }
 
   .copyright {
     font-size: $font-sm;
+    margin-top: 2rem;
   }
 }
