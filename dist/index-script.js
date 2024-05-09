@@ -31,7 +31,7 @@ const activatePropertyListings = function () {
       console.log(data.hits);
 
       data.hits.forEach(property => {
-        const propertyListing = document.createElement(`div`);
+        const propertyListing = document.createElement('div');
         propertyListing.classList.add('property-listings__listing');
 
         const address = property.location

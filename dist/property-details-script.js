@@ -21,23 +21,34 @@ const activatePropertyDetails = function () {
       return res.json();
     })
     .then(data => {
-      console.log(data);
+      // console.log(data);
 
+      // Address string formation
       const address = data.location
         .map(level => level.name)
         .reverse()
         .join(', ');
-      console.log(address);
+      // console.log(address);
 
-      // const amenities = data.amenities.join(',');
+      // Pictures
+      const pictures = document.createElement('div');
+      pictures.classList.add('pictures');
 
+      data.photos.forEach(picObject => {
+        const picture = document.createElement('div');
+        picture.classList.add('pictures__picture');
+
+        picture.innerHTML = `<img src="${picObject.url}" alt="photo">`;
+        pictures.appendChild(picture);
+      });
+
+      // Final Property details
       propertyDetails.innerHTML = `
         <h3>${data.title}</h3>
-        <div class="img--container">
-          <img src="${data.coverPhoto.url}" alt="${data.title}">
-        </div>
+        <p class="property-listings__listing__purpose">${data.purpose}</p>
         <p class="property-listings__listing__price"><i class="fa-solid fa-money-check-dollar"></i> $${data.price.toLocaleString()}</p>
         <p><i class="fa-solid fa-location-dot"></i> ${address}</p>
+
         <div class="flex-items">
         <p class="flex-items__item"><i class="fa-solid fa-maximize"></i> ${data.area.toFixed(
           2
@@ -49,9 +60,16 @@ const activatePropertyDetails = function () {
           data.baths
         } Baths</p>
       </div>
-        <p class="property-listings__listing__purpose">${data.purpose}</p>
+
+        <p class="property-listings__listing__description">Property Description</p>
         <p>${data.description}</p>
       `;
+
+      // Append pictures to propertyDetails before property purpose
+      const propertyPurpose = document.querySelector(
+        '.property-listings__listing__purpose'
+      );
+      propertyPurpose.insertAdjacentElement('afterend', pictures);
 
       skeletonContainer.classList.add('hidden');
       propertyDetails.classList.remove('hidden');
