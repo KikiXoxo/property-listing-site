@@ -14,7 +14,7 @@ $font-xxlg: 2.5rem;
 // MIXINS & SASS MAP
 $breakpoints-down: (
   'mobile': '560px',
-  'tab': '1023px',
+  'tab': '1024px',
 );
 
 @mixin breakpoint-down($size) {
@@ -261,11 +261,11 @@ li {
   font-weight: 700;
 }
 
-.property-listings__listing__purpose {
+.property-listings__listing__purpose,
+.property-listings__listing__description {
   font-weight: 700;
-  font-size: 1.2rem;
   text-transform: uppercase;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .text--primary {

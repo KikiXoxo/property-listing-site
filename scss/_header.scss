@@ -6,11 +6,11 @@
     height: 100vh;
 
     @include breakpoint-down(tab) {
-      height: 60vh;
+      height: 700px;
     }
 
     @include breakpoint-down(mobile) {
-      height: 70vh;
+      height: 600px;
     }
 
     .nav__link {

@@ -81,6 +81,12 @@
   align-items: center;
   justify-content: center;
 
+  h2 {
+    @include breakpoint-down(mobile) {
+      text-align: center;
+    }
+  }
+
   .skeleton-container .skeleton-item__child {
     &--1 {
       width: 100%;
@@ -231,6 +237,37 @@
         &--4 {
           width: 100%;
           height: 10%;
+        }
+      }
+    }
+  }
+
+  .property-details {
+    .pictures {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+
+      @include breakpoint-down(tab) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include breakpoint-down(mobile) {
+        grid-template-columns: 1fr;
+      }
+
+      &__picture {
+        overflow: hidden;
+
+        img {
+          cursor: pointer;
+          transition: all 200ms ease-in-out;
+
+          &:hover {
+            transform: scale(1.07);
+            opacity: 0.8;
+          }
         }
       }
     }
