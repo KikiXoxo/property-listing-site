@@ -25,7 +25,17 @@ activatePropertyCategories();
 // PROPERTY LISTINGS SECTION GENERATION
 const activatePropertyListings = function () {
   const propertyListings = document.querySelector('.property-listings');
+  const skeletonContainer = document.querySelector('.skeleton-container');
+  const skeletonItem = document.querySelector('.skeleton-item');
+  const numberOfSkeletonItems = 10;
 
+  // Duplicate sketeton items in container
+  for (let i = 0; i < numberOfSkeletonItems - 1; i++) {
+    const skeletonItemClone = skeletonItem.cloneNode(true);
+    skeletonContainer.appendChild(skeletonItemClone);
+  }
+
+  // Fetch actual listings
   const url =
     'https://bayut.p.rapidapi.com/properties/list?locationExternalIDs=5002%2C6020&purpose=for-rent&hitsPerPage=25&page=0&lang=en&sort=city-level-score&rentFrequency=monthly&categoryExternalID=4';
 
