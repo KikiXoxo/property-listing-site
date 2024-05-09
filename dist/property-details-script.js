@@ -71,8 +71,22 @@ const activatePropertyDetails = function () {
       );
       propertyPurpose.insertAdjacentElement('afterend', pictures);
 
-      skeletonContainer.classList.add('hidden');
-      propertyDetails.classList.remove('hidden');
+      // Hide skeleton class and reveal actual details only after all images are loaded (LOAD EVENT)
+      const images = document.querySelectorAll('img');
+      const totalImages = images.length;
+      let loadedImages = 0;
+
+      images.forEach(img => {
+        img.addEventListener('load', function () {
+          loadedImages++;
+          console.log(loadedImages);
+
+          if (loadedImages === totalImages) {
+            skeletonContainer.classList.add('hidden');
+            propertyDetails.classList.remove('hidden');
+          }
+        });
+      });
     })
     .catch(error => {
       console.error('Error fetching property data:', error);

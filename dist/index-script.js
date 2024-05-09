@@ -40,33 +40,45 @@ const activatePropertyListings = function () {
           .join(', ');
 
         propertyListing.innerHTML = `
-      <a href="property-details.html?externalID=${property.externalID}">
-        <h3>${property.title}</h3>
-        <div class="img--container">
-          <img src="${property.coverPhoto.url}" alt="${property.title}">
-        </div>
-        <p class="property-listings__listing__price"><i class="fa-solid fa-money-check-dollar"></i> $${property.price.toLocaleString()}</p>
-        <p><i class="fa-solid fa-location-dot"></i> ${address}</p>
-        <div class="flex-items">
-        <p class="flex-items__item"><i class="fa-solid fa-maximize"></i> ${property.area.toFixed(
-          2
-        )} SQM</p>
-        <p class="flex-items__item"><i class="fa-solid fa-bed"></i> ${
-          property.rooms
-        } Bedrooms</p>
-        <p class="flex-items__item"><i class="fa-solid fa-shower"></i> ${
-          property.baths
-        } Baths</p>
-      </div>
-
-      </a>
-      `;
+          <a href="property-details.html?externalID=${property.externalID}">
+            <h3>${property.title}</h3>
+            <div class="img--container">
+              <img src="${property.coverPhoto.url}" alt="${property.title}">
+            </div>
+            <p class="property-listings__listing__price"><i class="fa-solid fa-money-check-dollar"></i> $${property.price.toLocaleString()}</p>
+            <p><i class="fa-solid fa-location-dot"></i> ${address}</p>
+            <div class="flex-items">
+              <p class="flex-items__item"><i class="fa-solid fa-maximize"></i> ${property.area.toFixed(
+                2
+              )} SQM</p>
+              <p class="flex-items__item"><i class="fa-solid fa-bed"></i> ${
+                property.rooms
+              } Bedrooms</p>
+              <p class="flex-items__item"><i class="fa-solid fa-shower"></i> ${
+                property.baths
+              } Baths</p>
+            </div>
+          </a>
+        `;
         propertyListings.appendChild(propertyListing);
       });
 
-      // Hide skeleton class and reveal actual listings
-      skeletonContainer.classList.add('hidden');
-      propertyListings.classList.remove('hidden');
+      // Hide skeleton class and reveal actual listings only after all images are loaded (LOAD EVENT)
+      const coverImages = document.querySelectorAll('img');
+      const totalImages = coverImages.length;
+      let loadedImages = 0;
+
+      coverImages.forEach(coverImg => {
+        coverImg.addEventListener('load', function () {
+          loadedImages++;
+          console.log(loadedImages);
+
+          if (loadedImages === totalImages) {
+            skeletonContainer.classList.add('hidden');
+            propertyListings.classList.remove('hidden');
+          }
+        });
+      });
     })
     .catch(error => {
       console.error('Error fetching property data:', error);
