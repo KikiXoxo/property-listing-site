@@ -3,6 +3,7 @@
 // PROPERTY LISTINGS SECTION GENERATION
 const activatePropertyDetails = function () {
   const propertyDetails = document.querySelector('.property-details');
+  const skeletonContainer = document.querySelector('.skeleton-container');
 
   const urlParams = new URLSearchParams(window.location.search);
   const externalID = urlParams.get('externalID');
@@ -51,6 +52,9 @@ const activatePropertyDetails = function () {
         <p class="property-listings__listing__purpose">${data.purpose}</p>
         <p>${data.description}</p>
       `;
+
+      skeletonContainer.classList.add('hidden');
+      propertyDetails.classList.remove('hidden');
     })
     .catch(error => {
       console.error('Error fetching property data:', error);
