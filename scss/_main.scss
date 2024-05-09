@@ -46,10 +46,22 @@
     cursor: pointer;
     padding: 2.5rem 1.5rem;
     border-radius: 10px 30px;
+    transition: all 200ms ease-in-out;
 
     @include breakpoint-down(mobile) {
       align-items: center;
       text-align: center;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: $colorPrimary;
+      color: $colorLight;
+
+      a {
+        color: $colorLight;
+        border-bottom: 1px solid;
+      }
     }
 
     a {
@@ -58,17 +70,6 @@
 
     p {
       font-size: $font-sm;
-    }
-  }
-
-  .active {
-    transform: scale(1.08);
-    background-color: $colorPrimary;
-    color: $colorLight;
-
-    a {
-      color: $colorLight;
-      border-bottom: 1px solid;
     }
   }
 }

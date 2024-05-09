@@ -1,27 +1,5 @@
 'use strict';
 
-// PROPERTY CATEGORIES TABS
-const activatePropertyCategories = function () {
-  const propertCategories = document.querySelector('.categories__container');
-
-  propertCategories.addEventListener('click', function (e) {
-    if (e.target.closest('.categories__category')) {
-      const category = e.target.closest('.categories__category');
-      console.log(category);
-
-      propertCategories
-        .querySelectorAll('.categories__category')
-        .forEach(cat => {
-          console.log(cat);
-          cat.classList.remove('active');
-        });
-
-      category.classList.add('active');
-    }
-  });
-};
-activatePropertyCategories();
-
 // PROPERTY LISTINGS SECTION GENERATION
 const activatePropertyListings = function () {
   const propertyListings = document.querySelector('.property-listings');

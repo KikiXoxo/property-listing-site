@@ -428,6 +428,8 @@ li {
   cursor: pointer;
   padding: 2.5rem 1.5rem;
   border-radius: 10px 30px;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 @media (max-width: 560px) {
   .categories__category {
@@ -437,21 +439,21 @@ li {
     text-align: center;
   }
 }
+.categories__category:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  background-color: rgb(139, 33, 139);
+  color: #f4f4f4;
+}
+.categories__category:hover a {
+  color: #f4f4f4;
+  border-bottom: 1px solid;
+}
 .categories__category a {
   color: rgb(139, 33, 139);
 }
 .categories__category p {
   font-size: 0.875rem;
-}
-.categories .active {
-  -webkit-transform: scale(1.08);
-          transform: scale(1.08);
-  background-color: rgb(139, 33, 139);
-  color: #f4f4f4;
-}
-.categories .active a {
-  color: #f4f4f4;
-  border-bottom: 1px solid;
 }
 
 #property-listings {
