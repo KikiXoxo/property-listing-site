@@ -1,3 +1,5 @@
+// HOME PAGE
+// Categories section
 .categories {
   border-bottom: 1px solid $colorSecondary;
   .container {
@@ -71,53 +73,32 @@
   }
 }
 
+// Property Listings Section
 #property-listings {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  @include breakpoint-down(mobile) {
-    text-align: center;
-  }
+  .skeleton-container .skeleton-item__child {
+    &--1 {
+      width: 100%;
+      height: 30px;
+    }
 
-  .skeleton-container {
-    .skeleton-item {
-      background: $colorSecondary;
-      padding: 2rem 1rem;
-      width: 500px;
-      border-radius: 8px;
-      cursor: pointer;
+    &--2 {
+      width: 100%;
+      height: 180px;
+    }
 
-      &__child {
-        background: linear-gradient(
-          90deg,
-          #f8f8f8 25%,
-          #f3f3f3 50%,
-          #f8f8f8 75%
-        );
-        margin-bottom: 1rem;
-        background-size: 200% 100%;
-        animation: loading 2s infinite ease-in-out;
+    &--3 {
+      width: 20%;
+      height: 20px;
+    }
 
-        &--1 {
-          width: 100%;
-          height: 30px;
-          border-radius: 5px;
-        }
-
-        &--2 {
-          width: 100%;
-          height: 180px;
-        }
-
-        &--3 {
-          width: 100%;
-          height: 50px;
-          border-radius: 5px;
-          margin-bottom: 0;
-        }
-      }
+    &--4 {
+      width: 100%;
+      height: 30px;
     }
   }
 
@@ -148,12 +129,29 @@
       }
 
       h3 {
-        padding: 2.5rem 1rem 0;
+        padding: 1.5rem 1rem 0;
+        height: 80px;
+
+        @include breakpoint-down(tab) {
+          height: 70px;
+        }
+
+        @include breakpoint-down(mobile) {
+          text-align: center;
+        }
       }
 
       .img--container {
         overflow: hidden;
         height: 300px;
+
+        @include breakpoint-down(tab) {
+          height: 250px;
+        }
+
+        @include breakpoint-down(tab) {
+          height: 200px;
+        }
 
         img {
           height: 100%;
@@ -164,24 +162,7 @@
   }
 }
 
-.property-listings__listing__price {
-  margin-top: 1rem;
-  // font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.property-listings__listing__area {
-  font-weight: 700;
-  font-size: $font-sm;
-}
-
-.property-listings__listing__purpose {
-  font-weight: 700;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  margin-top: 2rem;
-}
-
+// Achievements Section
 #achievements {
   display: flex;
   flex-direction: column;
@@ -215,6 +196,41 @@
 
       @include breakpoint-down(mobile) {
         margin: 0.25rem 0;
+      }
+    }
+  }
+}
+
+// PROPERTY DETAILS PAGE
+#property-details {
+  .skeleton-container {
+    .skeleton-item {
+      height: 70vh;
+
+      @include breakpoint-down(mobile) {
+        height: 50vh;
+      }
+
+      &__child {
+        &--1 {
+          width: 100%;
+          height: 7%;
+        }
+
+        &--2 {
+          width: 100%;
+          height: 70%;
+        }
+
+        &--3 {
+          width: 20%;
+          height: 6%;
+        }
+
+        &--4 {
+          width: 100%;
+          height: 10%;
+        }
       }
     }
   }

@@ -14,7 +14,7 @@ $font-xxlg: 2.5rem;
 // MIXINS & SASS MAP
 $breakpoints-down: (
   'mobile': '560px',
-  'tab': '1024px',
+  'tab': '1023px',
 );
 
 @mixin breakpoint-down($size) {
@@ -87,6 +87,10 @@ h3 {
   // font-family: 'Teko', sans-serif;
   text-transform: uppercase;
   font-weight: 750;
+
+  @include breakpoint-down(tab) {
+    font-size: $font-med;
+  }
 }
 
 h4 {
@@ -197,6 +201,73 @@ li {
   }
 }
 
+// General Skeleton Styles
+.skeleton-container {
+  width: 100%;
+  .skeleton-item {
+    background: $colorSecondary;
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &__child {
+      background: linear-gradient(90deg, #f8f8f8 25%, #f3f3f3 50%, #f8f8f8 75%);
+
+      background-size: 200% 100%;
+      animation: loading 2s infinite ease-in-out;
+
+      &--1 {
+        border-radius: 5px;
+        margin-bottom: 1rem;
+      }
+
+      &--2 {
+        margin-bottom: 1rem;
+      }
+
+      &--3 {
+        border-radius: 5px;
+        margin-bottom: 0.5rem;
+      }
+
+      &--4 {
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+// General Property Information Styles
+.flex-items {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  &__item {
+    font-weight: 700;
+    font-size: 0.75rem;
+    margin-right: 25px;
+
+    @include breakpoint-down(mobile) {
+      margin-right: 15px;
+    }
+  }
+}
+
+.property-listings__listing__price {
+  margin-top: 1rem;
+  // font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.property-listings__listing__purpose {
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+
 .text--primary {
   color: $colorPrimary;
 }
@@ -216,4 +287,8 @@ li {
 
 .bg-secondary {
   background: $colorSecondary;
+}
+
+.hidden {
+  display: none;
 }
