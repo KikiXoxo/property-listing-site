@@ -67,17 +67,28 @@ const activatePropertyListings = function () {
         <div class="img--container">
           <img src="${property.coverPhoto.url}" alt="${property.title}">
         </div>
-        <p class="property-listings__listing__price"><i class="fa-solid fa-money-check-dollar"></i> $${
-          property.price
-        }</p>
+        <p class="property-listings__listing__price"><i class="fa-solid fa-money-check-dollar"></i> $${property.price.toLocaleString()}</p>
         <p><i class="fa-solid fa-location-dot"></i> ${address}</p>
-        <p class="property-listings__listing__area"><i class="fa-solid fa-maximize"></i> ${property.area.toFixed(
+        <div class="flex-items">
+        <p class="flex-items__item"><i class="fa-solid fa-maximize"></i> ${property.area.toFixed(
           2
         )} SQM</p>
+        <p class="flex-items__item"><i class="fa-solid fa-bed"></i> ${
+          property.rooms
+        } Bedrooms</p>
+        <p class="flex-items__item"><i class="fa-solid fa-shower"></i> ${
+          property.baths
+        } Baths</p>
+      </div>
+
       </a>
       `;
         propertyListings.appendChild(propertyListing);
       });
+
+      // Hide skeleton class and reveal actual listings
+      skeletonContainer.classList.add('hidden');
+      propertyListings.classList.remove('hidden');
     })
     .catch(error => {
       console.error('Error fetching property data:', error);

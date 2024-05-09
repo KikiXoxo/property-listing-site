@@ -35,13 +35,19 @@ const activatePropertyDetails = function () {
         <div class="img--container">
           <img src="${data.coverPhoto.url}" alt="${data.title}">
         </div>
-        <p class="property-listings__listing__price"><i class="fa-solid fa-money-check-dollar"></i> $${
-          data.price
-        }</p>
+        <p class="property-listings__listing__price"><i class="fa-solid fa-money-check-dollar"></i> $${data.price.toLocaleString()}</p>
         <p><i class="fa-solid fa-location-dot"></i> ${address}</p>
-        <p class="property-listings__listing__area"><i class="fa-solid fa-maximize"></i> ${data.area.toFixed(
+        <div class="flex-items">
+        <p class="flex-items__item"><i class="fa-solid fa-maximize"></i> ${data.area.toFixed(
           2
         )} SQM</p>
+        <p class="flex-items__item"><i class="fa-solid fa-bed"></i> ${
+          data.rooms
+        } Bedrooms</p>
+        <p class="flex-items__item"><i class="fa-solid fa-shower"></i> ${
+          data.baths
+        } Baths</p>
+      </div>
         <p class="property-listings__listing__purpose">${data.purpose}</p>
         <p>${data.description}</p>
       `;
